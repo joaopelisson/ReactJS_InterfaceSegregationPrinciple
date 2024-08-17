@@ -5,15 +5,18 @@ interface IUser {
   address: string;
 }
 
+// We no longer depend on IUser, so if it changes, it doesn't break our component.
+// and it doesn't hurt the ISP.
 interface IProfile {
-  user: IUser;
+  name: string;
+  email: string;
 }
 
-function Profile({ user }: Readonly<IProfile>) {
+function Profile({ email = "", name = "" }: Readonly<IProfile>) {
   return (
     <div>
-      <h1>{user.name}</h1>
-      <p>{user.email}</p>
+      <h1>{name}</h1>
+      <p>{email}</p>
     </div>
   );
 }

@@ -1,10 +1,9 @@
 import './App.css'
+import { Profile } from './components/Profile'
 
 function App() {
   return (
-    <div>
-      Hello World 🌍
-    </div>
+    <Profile name="João Pedro V Pelisson" email="example@example.com" />
   )
 }
 
